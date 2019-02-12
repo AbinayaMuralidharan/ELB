@@ -1,0 +1,99 @@
+<div id="chat_1.1" class="container speech-bubble speech-bubble:after" >
+  <div *ngFor='let option of options'>
+
+    <label>
+      <input type='checkbox' style='font-weight: lighter' name='options' value='{{option.value}}' [(ngModel)]="option.checked" data-md-icheck
+        (change)='newfunc($event)'>{{option.name}}
+
+    </label>
+
+  </div>
+  <input type="button" class="btn btn-warning" value='ok' (click)='convertToArray()'>&nbsp;&nbsp;&nbsp;
+  <input type="button" class="btn btn-warning" value="Refresh" onclick="refresh()" />&nbsp;&nbsp;&nbsp;
+  <input type="button" class="btn btn-warning" value="Others" />
+</div>
+<!-- <span *ngFor='let options of checked()' >{{selectedvalues}}</span> -->
+
+<!-- <input type="hidden" *ngFor='let options of checked()' value='{{options.value}}' [(ngModel)]='selectedoptions'>  -->
+
+<!-- <input type="button" value='ok' (click)='selectedOptionFunc()'> -->
+
+<div *ngIf='[check]==1'>
+  <div id="checkbox_3.4div">
+    <div class="container1 speech-bubble2 speech-bubble2:after" style="padding-top:0%; padding-bottom:1%">
+      <h5>Proceed for resolution for option1 or option2</h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="button" class="btn btn-warning" id="option1" value="option1" (click)="option1_fn()" />&nbsp;&nbsp;&nbsp;
+      <input type="button" class="btn btn-warning" id="option2" value="option2" (click)="option2_fn()" />
+    </div>
+  </div>
+</div>
+<div id="dialog_div4.1" *ngIf='option2'>
+  <div class="container speech-bubble speech-bubble:after" style="padding-top:0%; padding-bottom:1% ;width:52%;margin-right:46%">
+    <h5>Change the hud pipe line with part #2378 with seal #90009 as per AMM # 32-00-34 and check for leakage if any ?</h5>
+    <input type="button" class="btn btn-warning" id="yes1" value="yes" (click)="yes1_fn()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="no1" value="no" (click)="no1_fn()" />
+  </div>
+</div>
+
+<div id="dialog_div5.1" *ngIf='no1'>
+  <div class="container1 speech-bubble2 speech-bubble2:after" style="padding-top:0%; padding-bottom:1%">
+    <h5>For option 1,Activate teh secondary seal as per AMM 32-77-66 and check for any leakage? If leakage, then redo
+      the same process,if no leakage then proceed ?</h5>
+    <input type="button" class="btn btn-warning" id="yes2" value="yes" (click)="yes2_fn()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="no2" value="no" (click)="no2_fn()" />
+
+  </div>
+</div>
+
+<div id="dialog_div6.1" *ngIf='yes2'>
+  <div class="container speech-bubble speech-bubble:after" style="padding-top:0%; padding-bottom:1%;width:52%;margin-right:46%">
+    <h5>Check for landing gear operation as per AMM 32-77-21 and see if any abnormal operation ?
+    </h5>
+    <input type="button" class="btn btn-warning" id="yes3" value="yes" (click)="yes3_fn()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="no3" value="no" (click)="no3_fn()" />
+  </div>
+</div>
+<div id="dialog_div7.1" *ngIf='no3'>
+  <div class="container1 speech-bubble2 speech-bubble2:after" style="padding-top:0%; padding-bottom:1%">
+    <h5>
+      Please note that since secondary seal is activated,Main seal to be replaced within 1500FH as per AMM 32-77-89,the
+      defect cannot be closed and the defect will be defered as per MCC ref LMLG-567, proceed ?
+    </h5>
+    <input type="button" class="btn btn-warning" id="yes4" value="yes" (click)="yes4_fn()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="no4" value="no" (click)="no4_fn()" />
+  </div>
+</div>
+<div id="dialog_div8.1" *ngIf='yes4'>
+  <div class="container speech-bubble speech-bubble:after" style="padding-top:0%; padding-bottom:1%;width:52%;margin-right:46%">
+    <h5>Action Taken:
+      Found hyd pipe line leakage, replace the pipeline with part #2378 with seal #90009 as per AMM 32-00-34 .Found
+      main seal leakage, activated the secondary seal as per AMM 32-77-66,Defect is defered under MCC ref LM-LG-567 and
+      main seal to be replaced within FH
+    </h5>
+    <input type="button" class="btn btn-warning" id="ok1" value="OK" (click)="ok1_fn()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="Edit1" value="Edit" (click)="edit1_fn()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="Exit1" value="Exit" (click)="exit1_fn()" />
+  </div>
+</div>
+
+<div id="dialog_div9.1" *ngIf='ok1'>
+  <div class="container1 speech-bubble2 speech-bubble2:after" style="padding-top:0%; padding-bottom:1%">
+    <h5>Check for landing gear operation as per AMM 32-77-21 and see if any abnormal operation ?
+    </h5>
+    <input type="button" class="btn btn-warning" id="New_defect" value="New Defect" (click)="new_Defect()" />&nbsp;&nbsp;&nbsp;
+    <input type="button" class="btn btn-warning" id="signoff" value="sign off" (click)="signOff()" />
+  </div>
+</div>
+
+<div id="dialog_div10.1" *ngIf='signoff'>
+  <div class="container speech-bubble speech-bubble:after" style="padding-top:0%; padding-bottom:1%;width:52%;margin-right:46%">
+    <h5>Certificate of release to service:
+      Certified that the work specified was carried out in accordance with CAR 145 and in respect to that work the
+      aircraft/aircraft component is considered ready for release to service
+    </h5>
+    <label>Signature</label>
+    <input type="text" id="Txtbox_Sign" />&nbsp;&nbsp;&nbsp;
+    <input type="date" id="calendar" />
+
+  </div>
+</div>

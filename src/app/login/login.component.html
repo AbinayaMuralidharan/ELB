@@ -1,0 +1,15 @@
+<div *ngIf='togglevalue'><label>UserName</label>&nbsp;
+  <input type="text" id="txtname"><br><br>
+  <label>Password</label>&nbsp;
+  <input type="password" id="txtpassword"><br><br>
+  <input type="button" id="btnlogin" value="Login" (click)="toggle()" routerLink="/home" >&nbsp;
+  <input type="button" id="btnsignup" value="Sign Up">
+  
+</div>
+
+<div >
+<router-outlet *ngIf='!togglevalue'></router-outlet>
+
+</div>
+
+  

@@ -1,0 +1,101 @@
+<!-- <p>
+  homepage works!
+</p>
+<button *ngIf='!toggle' (click)='toggle()' routerLink="/login" >back</button>
+<router-outlet></router-outlet> -->
+<div *ngIf='redirect'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <pre style="color:navy"><span><app-profile></app-profile></span></pre>
+<div class="container">
+     
+    <div id="main">
+    <div class="navbar1" style="width:106%;margin-left:-3%;height:15%">
+  <a href="#new_defect" >Availabe Aircraft</a>
+  <a href="#history" >Customer Feedback by aircraft</a>
+  <a href="#TECHLOG" >Signedoff aircraft</a>
+  <a href="#SAVE" >All aircrafts</a>
+  </div>
+  <br />
+  <table class="table">
+    <thead>
+      <tr >
+        <th>AC reg</th>
+        <th>Ac Type</th>
+        <th>Ac Subtype</th>
+           <th>Valid from</th>
+           <th>Valid to</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr routerLink='/topnav' (click)='myFunction()'>
+        <td>IAL</td>
+        <td>A320</td>
+        <td>232</td>
+          <td>8/1/2014</td>
+          <td>8/1/2020</td>
+      </tr>
+      
+      <tr (click)="myFunction('checkbox')">
+        <td>IAN</td>
+        <td>A320</td>
+        <td>232</td>
+          <td>8/1/2014</td>
+          <td>8/1/2020</td>
+      </tr>
+      <tr (click)="myFunction()">
+        <td> &nbsp;</td>
+        <td> &nbsp;</td>
+        <td> &nbsp;</td>
+          <td> &nbsp;</td>
+        <td> &nbsp;</td>
+      </tr>
+      <tr (click)="myFunction()">
+          <td> &nbsp; </td>
+           <td>  &nbsp;</td>
+           <td>  &nbsp;</td>
+          <td> &nbsp;</td>
+        <td> &nbsp;</td>
+      </tr>
+      <tr><td>  &nbsp; </td>
+           <td> &nbsp; </td>
+           <td>  &nbsp;</td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+     <tr><td> &nbsp;</td>
+           <td> &nbsp; </td>
+           <td>  &nbsp;</td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+        <tr><td> &nbsp; </td>
+           <td> &nbsp; </td>
+           <td> &nbsp;</td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+        <tr><td>  &nbsp;</td>
+           <td>  &nbsp;</td>
+           <td>  &nbsp;</td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+        <tr><td> &nbsp; </td>
+           <td>  &nbsp;</td>
+           <td> &nbsp; </td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+        <tr><td> &nbsp; </td>
+           <td> &nbsp; </td>
+           <td> &nbsp; </td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+        <tr><td> &nbsp; </td>
+           <td> &nbsp; </td>
+           <td> &nbsp; </td><td> &nbsp;</td>
+        <td> &nbsp;</td></tr>
+        
+        
+    </tbody>
+      
+  </table>
+        <button style="width:98%;background-color:#094D88;color:white;margin-left:-3%;position:fixed"><h3><i class="fa fa-home"></i> Home</h3></button>
+</div>
+        </div>
+      </div>
+        <router-outlet *ngIf='!redirect'></router-outlet>
+    
+      

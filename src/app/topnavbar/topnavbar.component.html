@@ -1,0 +1,31 @@
+<div id="mySidenav" class="sidenav" [style.width] = "w" >
+    <a class="closebtn" (click) ="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  
+  
+  
+<div class="topnav">
+    <a style="cursor:pointer" (click) ="openNav()">&#9776; Profile</a>
+   
+  </div>
+  
+ 
+  <div *ngIf='hidingSidenav'>
+    <app-sidenav (eventvariable)="checkfun($event)"></app-sidenav>
+  </div>
+  <div *ngIf="enable" style="position:relative;margin-bottom:15%" ><app-checkbox></app-checkbox></div>
+  <div class="navbar" style="margin-left: 19%;margin-bottom: 0%">
+      <a class="active" href="#newdefect">New Defect</a>
+      <a href="#history">History</a>
+      <a href="#techlog">Techlog</a>
+      <a href="#save">Save</a>
+      <a href="#signoff">SignOff</a>
+  </div>
+  
+ 
+  

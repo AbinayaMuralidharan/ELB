@@ -1,0 +1,18 @@
+<div  id="chat_1.1">
+  <div  *ngFor='let option of options' >
+    
+      <label>
+        <input type='checkbox'
+                name='options'
+                value='{{option.value}}'
+                [(ngModel)]="option.checked">{{option.name}}
+      </label>   
+   
+    </div>
+ <!-- <span *ngFor='let options of checked()'  >{{options.value}}</span>
+  
+  <input type="hidden" *ngFor='let options of checked()' value='{{options.value}}' [(ngModel)]='selectedoptions'> -->
+ 
+ <input type="button" value='ok' (click)='selectedOptionFunc()'>
+</div>
+
